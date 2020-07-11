@@ -12,7 +12,7 @@ namespace PayStack.Net
         TransferOtpResponse DisableOtpBegin();
         TransferOtpResponse DisableOtpComplete(string otp);
         TransferOtpResponse EnableOtp();
-        InitiateTransferResponse InitiateTransfer(int amount, string recipientCode, string source = "balance", string currency = "NGN", string reason = null);
+        InitiateTransferResponse InitiateTransfer(int amount, string recipientCode, string source = "balance", string currency = "NGN", string reason = null, string reference = null);
         ListTransfersResponse ListTransfers(int itemsPerPage = 50, int page = 1);
         FetchTransferResponse FetchTransfer(string transferIdOrCode);
         void FinalizeTransfer(string transferCode, string otp);

@@ -32,13 +32,14 @@ namespace PayStack.Net
             new { }
         );
 
-        public InitiateTransferResponse InitiateTransfer(int amount, string recipientCode, string source = "balance", string currency = "NGN", string reason = null) => _api.Post<InitiateTransferResponse, dynamic>("transfer", new
+        public InitiateTransferResponse InitiateTransfer(int amount, string recipientCode, string source = "balance", string currency = "NGN", string reason = null, string reference = null) => _api.Post<InitiateTransferResponse, dynamic>("transfer", new
         {
             source = source,
             amount = amount,
             currency = currency,
             reason = reason,
-            recipient = recipientCode
+            recipient = recipientCode,
+            reference = reference
         });
 
         public ListTransfersResponse ListTransfers(int itemsPerPage = 50, int page = 1) => _api.Get<ListTransfersResponse, dynamic>("transfer", new
