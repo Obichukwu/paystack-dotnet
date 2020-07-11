@@ -3,10 +3,10 @@ using Newtonsoft.Json;
 
 namespace PayStack.Net
 {
-    public class Transfer
+    public class InitiateTransferData
     {
-        [JsonProperty("recipient")]
-        public TransferRecipient.Data Recipient { get; set; }
+        [JsonProperty("integration")]
+        public string Integration { get; set; }
 
         [JsonProperty("domain")]
         public string Domain { get; set; }
@@ -25,13 +25,16 @@ namespace PayStack.Net
 
         [JsonProperty("reason")]
         public string Reason { get; set; }
+        
+        [JsonProperty("recipient")]
+        public string Recipient { get; set; }
 
         [JsonProperty("status")]
         public string Status { get; set; }
 
-        [JsonProperty("failures")]
-        public object Failures { get; set; }
-
+        [JsonProperty("reference")]
+        public string Reference { get; set; }
+        
         [JsonProperty("transfer_code")]
         public string TransferCode { get; set; }
 
@@ -58,5 +61,8 @@ namespace PayStack.Net
 
         [JsonProperty("message")]
         public string Message { get; set; }
+
+        [JsonProperty("data")]
+        public InitiateTransferData Data { get; set; }
     }
 }
